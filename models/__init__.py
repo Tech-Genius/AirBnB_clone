@@ -1,9 +1,4 @@
-#!/usr/bin/env python3
-"""
-importing FileStorage from engine module
-"""
+"""Module for FileStorage autoinit."""
 from models.engine.file_storage import FileStorage
-
-
 storage = FileStorage()
 storage.reload()

@@ -1,14 +1,10 @@
-#!/usr/bin/env python3
-"""
-Defines the city for the airbnb
-"""
+#!/usr/bin/python3
+"""Module for City class."""
+
 from models.base_model import BaseModel
 
 
 class City(BaseModel):
-    """
-    Class to implement city for the airbnb house
-    """
-
+    """Class representing a City."""
     state_id = ""
     name = ""

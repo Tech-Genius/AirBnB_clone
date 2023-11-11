@@ -1,12 +1,11 @@
-# Description :label:
+# AirBnB_clone
+Clone Project for AirBnb 
 
-##
-HBNB is a complete web application, integrating database
-storage, HTML/CSS templating, API, front-end and others.
+## Authors
+---
+* [Kelvin Halx](https://twitter.com/Dev_Halx)
+* [Iyanuoluwa Okunade](https://github.com/heeyahnuh123)
 
-This team project is part of the ALX School Software Engineering program.</br>
-It represents the first step towards building a full web application:
-the AirBnB clone.
-
-This first step consists of:
-- a custom command-line interface for data management
+## Description
+---
+The AirBnB clone is for us to put in practice what we've learned so far, inheritance, classes, opening and closing files and changing them.

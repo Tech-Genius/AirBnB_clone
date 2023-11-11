@@ -1,15 +1,11 @@
-#!/usr/bin/env python3
-"""
-model for Review for the airbnb
-"""
+#!/usr/bin/python3
+"""Module for Review class."""
+
 from models.base_model import BaseModel
 
 
 class Review(BaseModel):
-    """
-    Class for implementing review of the rooms
-    """
-
+    """Class representing a Review."""
     place_id = ""
     user_id = ""
     text = ""

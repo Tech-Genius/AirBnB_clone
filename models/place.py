@@ -1,16 +1,11 @@
-#!/usr/bin/env python3
-"""
-Describes the place where the airbnb will be located and description for
-the place
-"""
+#!/usr/bin/python3
+"""Module for Place class."""
+
 from models.base_model import BaseModel
 
 
 class Place(BaseModel):
-    """
-    Class that defines the place where airbnb is located including description
-    """
-
+    """Class representing a Place."""
     city_id = ""
     user_id = ""
     name = ""

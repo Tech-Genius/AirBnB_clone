@@ -1,11 +1,9 @@
-#!/usr/bin/env python3
-"""
-adds a new state to the app
-"""
+#!/usr/bin/python3
+"""Module for State class."""
+
 from models.base_model import BaseModel
 
 
 class State(BaseModel):
-    """ class that adds state """
-
+    """Class representing a State."""
     name = ""

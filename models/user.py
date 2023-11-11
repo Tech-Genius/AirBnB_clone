@@ -1,15 +1,10 @@
-#!/usr/bin/env python3
-"""
-This is module is used to define a new user of the program
-"""
+#!/usr/bin/python3
+"""Module for User class."""
 from models.base_model import BaseModel
 
 
 class User(BaseModel):
-    """
-    Class that defines a new user
-    """
-
+    """Class representing a User."""
     email = ""
     password = ""
     first_name = ""

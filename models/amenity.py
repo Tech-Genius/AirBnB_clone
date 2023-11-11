@@ -1,13 +1,9 @@
-#!/usr/bin/env python3
-"""
-adds Amenity to the app
-"""
+#!/usr/bin/python3
+"""Module for Amenity class."""
+
 from models.base_model import BaseModel
 
 
 class Amenity(BaseModel):
-    """
-    defines class Amenity which instantiates amenity in the HBNB
-    """
-
+    """Class representing a Amenity."""
     name = ""

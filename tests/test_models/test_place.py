@@ -1,38 +1,53 @@
 #!/usr/bin/python3
+"""Unittest module for the Place Class."""
+
 import unittest
+from datetime import datetime
+import time
 from models.place import Place
+import re
+import json
+from models.engine.file_storage import FileStorage
+import os
+from models import storage
 from models.base_model import BaseModel
 
 
 class TestPlace(unittest.TestCase):
-    """Test cases for the User class"""
 
-    def test_inheritance(self):
-        self.assertTrue(issubclass(Place, BaseModel))
+    """Test Cases for the Place class."""
 
-    def test_place_attributes(self):
-        place = Place()
-        self.assertTrue(hasattr(place, 'id'))
-        self.assertTrue(hasattr(place, 'created_at'))
-        self.assertTrue(hasattr(place, 'updated_at'))
-        self.assertTrue(hasattr(place, 'city_id'))
-        self.assertTrue(hasattr(place, 'user_id'))
-        self.assertTrue(hasattr(place, 'name'))
-        self.assertTrue(hasattr(place, 'description'))
-        self.assertTrue(hasattr(place, 'number_rooms'))
-        self.assertTrue(hasattr(place, 'number_bathrooms'))
-        self.assertTrue(hasattr(place, 'max_guest'))
-        self.assertTrue(hasattr(place, 'price_by_night'))
-        self.assertTrue(hasattr(place, 'latitude'))
-        self.assertTrue(hasattr(place, 'longitude'))
-        self.assertTrue(hasattr(place, 'amenity_ids'))
+    def setUp(self):
+        """Sets up test methods."""
+        pass
 
-    def test_to_dict_method(self):
-        place = Place()
-        place_dict = place.to_dict()
-        self.assertIsInstance(place_dict, dict)
-        self.assertEqual(place_dict['__class__'], 'Place')
+    def tearDown(self):
+        """Tears down test methods."""
+        self.resetStorage()
+        pass
+
+    def resetStorage(self):
+        """Resets FileStorage data."""
+        FileStorage._FileStorage__objects = {}
+        if os.path.isfile(FileStorage._FileStorage__file_path):
+            os.remove(FileStorage._FileStorage__file_path)
+
+    def test_8_instantiation(self):
+        """Tests instantiation of Place class."""
+
+        b = Place()
+        self.assertEqual(str(type(b)), "<class 'models.place.Place'>")
+        self.assertIsInstance(b, Place)
+        self.assertTrue(issubclass(type(b), BaseModel))
+
+    def test_8_attributes(self):
+        """Tests the attributes of Place class."""
+        attributes = storage.attributes()["Place"]
+        o = Place()
+        for k, v in attributes.items():
+            self.assertTrue(hasattr(o, k))
+            self.assertEqual(type(getattr(o, k, None)), v)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
